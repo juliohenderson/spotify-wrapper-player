@@ -1,0 +1,78 @@
+{
+  "name": "spotify-wrapper-player",
+  "version": "1.0.0",
+  "description": "A Player with unit tests using spotify-wrapper lib",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "lint": "./node_modules/.bin/eslint ./src/**/*js ./examples/**/*js ./tests/**/*js",
+    "prepush": "yarn lint",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc yarn test"
+  },
+  "nyc": {
+    "functions": 80,
+    "lines": 80,
+    "check-coverage": true,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "6",
+    "babel-loader": "7.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-mocha": "^6.1.0",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "1.7.0",
+    "husky": "^3.0.4",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "jsdom": "^15.1.1",
+    "jsdom-global": "^3.0.2",
+    "node-fetch": "2.6.0",
+    "spotify-wrapper-test-unit": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliohenderson/spotify-wrapper-player.git"
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "library",
+    "spotify",
+    "tests",
+    "unit"
+  ],
+  "author": "Júlio Henderson <julio.henderson98@gmail.com> (https://linkedin.com/in/juliohenderson/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juliohenderson/spotify-wrapper-player/issues"
+  },
+  "homepage": "https://github.com/juliohenderson/spotify-wrapper-player#readme"
+}
